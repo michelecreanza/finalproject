@@ -104,3 +104,38 @@ Processing by BeersController#index as HTML
 Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 1400)
 
 
+Started GET "/beers" for 127.0.0.1 at 2019-12-12 18:45:23 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (1.0ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 17.3ms | ActiveRecord: 10.5ms | Allocations: 6463)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBeer Create (3.4ms)[0m  [1m[32mINSERT INTO "beers" ("name", "img", "brand", "alcohol", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Corona"], ["img", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s"], ["brand", "Scorpio"], ["alcohol", "6.3%"], ["created_at", "2019-12-12 23:49:05.356026"], ["updated_at", "2019-12-12 23:49:05.356026"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBeer Create (0.5ms)[0m  [1m[32mINSERT INTO "beers" ("name", "img", "brand", "alcohol", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ryan Corona"], ["img", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s"], ["brand", "Scorpio"], ["alcohol", "6.3%"], ["created_at", "2019-12-12 23:49:05.368119"], ["updated_at", "2019-12-12 23:49:05.368119"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBeer Create (0.4ms)[0m  [1m[32mINSERT INTO "beers" ("name", "img", "brand", "alcohol", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ryan Gosling"], ["img", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s"], ["brand", "Scorpio"], ["alcohol", "6.3%"], ["created_at", "2019-12-12 23:49:05.375522"], ["updated_at", "2019-12-12 23:49:05.375522"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBeer Create (0.3ms)[0m  [1m[32mINSERT INTO "beers" ("name", "img", "brand", "alcohol", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sauron"], ["img", "http://ia.media-imdb.com/images/M/MV5BMTc0Njk5NDQwNl5BMl5BanBnXkFtZTYwNTU3NTky._V1_SX150_CR0,0,150,150_.jpg"], ["brand", "Taurus"], ["alcohol", "6.3%"], ["created_at", "2019-12-12 23:49:05.382614"], ["updated_at", "2019-12-12 23:49:05.382614"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/beers" for 127.0.0.1 at 2019-12-12 18:49:10 -0500
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 2008)
+
+
+Started GET "/beers" for ::1 at 2019-12-12 18:50:39 -0500
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (2.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 2.4ms | Allocations: 2008)
+
+

@@ -8,6 +8,18 @@
 
 Beer.create([
     {
+        "name": "Corona",
+        "brand": "Scorpio",    
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s",
+        "alcohol": "6.3%"
+    },
+    {
+        "name": "Ryan Corona",
+        "brand": "Scorpio",    
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s",
+        "alcohol": "6.3%"
+    },
+    {
         "name": "Ryan Gosling",
         "brand": "Scorpio",    
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzHL4aufOK1Efmt3oipIU3S2RGLCkWFkuUGJziPR6fS2itjKfEQ&s",
