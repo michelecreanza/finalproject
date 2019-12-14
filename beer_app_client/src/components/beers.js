@@ -6,9 +6,9 @@ class Beers extends Component {
     beers: []
   };
   componentDidMount() {
-    this.getDaters();
+    this.getBeers();
   }
-  async getDaters() {
+  async getBeers() {
     const response = await axios("/beers");
     const data = response.data;
     this.setState({
@@ -23,13 +23,13 @@ class Beers extends Component {
           <h1>Hello Beer World</h1>
         </header>
 
-        {this.state.beers.map(beers => {
+        {this.state.beers.map(beer => {
           return (
             <main>
-              <div key={beers.id}>
-                <h3>Name: {beers.name} </h3>
-                <img src={beers.img} alt={beers.name} />
-                <h4>Starsign: {beers.alcohol} </h4>
+              <div key={beer.id}>
+                {/* <h3>Name: {beers.name} </h3> */}
+                <img src={beer.img} alt={beer.name} />
+                {/* <h4>alcohol: {beers.alcohol} </h4> */}
               </div>
             </main>
           );
