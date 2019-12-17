@@ -12,7 +12,32 @@ class Form extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ [event.target.id]: event.target.value });
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    if (this.props.beer) {
+      this.props.handleSubmit(event, {
+        name: this.state.name,
+        img: this.state.img,
+        alcohol: this.state.alcohol,
+        id: this.props.beer.id
+      });
+      this.props.toggleForm();
+    } else {
+      this.props.handleSubmit(event, {
+        name: this.state.name,
+        img: this.state.img,
+        alcohol: this.state.alcohol
+      });
+    }
+    this.setState({
+      name: "",
+      img: "",
+      alcohol: ""
+    });
   }
   componentDidMount() {
     if (this.props.beer) {
@@ -23,29 +48,6 @@ class Form extends React.Component {
         id: this.props.beer.id || ""
       });
     }
-  }
-  async handleUpdate(event, formInputs) {
-    event.preventDefault();
-    console.log("updating");
-    await axios.put(`/beers/${formInputs.id}`, formInputs);
-    this.getBeers();
-  }
-  handleChange(event) {
-    this.setState({ [event.target.id]: event.target.value });
-  }
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.handleSubmit(event, {
-      name: this.state.name,
-      img: this.state.img,
-      alcohol: this.state.alcohol
-      // id: this.props.beer.id
-    });
-    this.setState({
-      name: "",
-      img: "",
-      alcohol: ""
-    });
   }
 
   render() {
