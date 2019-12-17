@@ -16,33 +16,15 @@ class App extends React.Component {
     this.state = {
       beers: []
       // formInputs: {
-      //   author: "",
-      //   content: "",
-      //   title: ""
+      //   name: "",
+      //   img: "",
+      //   alcohol: ""
       // }
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-  }
-  async handleDelete(deletedBeer) {
-    await axios.delete(`/beers/${deletedBeer.id}`);
-    this.getBeers();
-  }
-  componentDidMount() {
-    if (this.props.beer) {
-    }
-  }
-  async handleUpdate(event, formInputs) {
-    event.preventDefault();
-    console.log("updating");
-    await axios.put(`/beers/${formInputs.id}`, formInputs);
-    this.getBeers();
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.formInputs);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   async handleAdd(event, formInputs) {
     event.preventDefault();
@@ -56,6 +38,41 @@ class App extends React.Component {
     // });
     this.getBeers();
   }
+  async handleDelete(deletedBeer) {
+    await axios.delete(`/beers/${deletedBeer.id}`);
+    this.getBeers();
+  }
+  componentDidMount() {
+    if (this.props.beer) {
+      this.setState({
+        alcohol: this.props.beer.alcohol || "",
+        img: this.props.beer.img || "",
+        name: this.props.beer.name || "",
+        id: this.props.beer.id || ""
+      });
+    }
+  }
+  async handleUpdate(event, formInputs) {
+    event.preventDefault();
+    console.log("updating");
+    await axios.put(`/beers/${formInputs.id}`, formInputs);
+    this.getBeers();
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.formInputs);
+  }
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  //   this.props.handleSubmit(event, {
+  //     name: this.state.name,
+  //     img: this.state.img,
+  //     alcohol: this.state.alcohol,
+  //     id: this.props.beer.id
+  //   });
+  // }
+
   //... and pass this into the Aside
 
   componentDidMount() {

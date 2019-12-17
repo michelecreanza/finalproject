@@ -15,10 +15,10 @@ code {
 
 :root {
   --black: rgba(0, 0, 0, 1);
-  --oasis-green: rgba(131, 151, 136, 1);
+  --oasis-green: rgb(185, 230, 196);
   --sandy: rgba(238, 224, 203, 1);
   --shady-sand: rgba(186, 168, 152, 1);
-  --oasis-blue: rgba(191, 215, 234, 1);
+  --oasis-blue: rgb(235, 244, 112);
 }
 
 h1 {

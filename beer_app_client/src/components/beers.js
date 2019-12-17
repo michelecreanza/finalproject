@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class Beers extends Component {
-  state = {
-    beers: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      beers: []
+    };
+  }
+
   componentDidMount() {
     this.getBeers();
   }

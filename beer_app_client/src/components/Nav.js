@@ -22,14 +22,13 @@ function Nav(props) {
       <a href="https://github.com/michelecreanza?tab=repositories"> github</a>
 
       <h3>Soccer app</h3>
-      <a href="https://github.com/michelecreanza/soccergithubmichelecreanza.github.io">
-        Soccer app
-      </a>
+      <a href="https://wonderful-easley-d33963.netlify.com/">Soccer app</a>
 
       <h3>Coffe app</h3>
-      <a href="https://github.com/michelecreanza/caffegithubmichelecreanza.github.io/tree/master/coffe_app">
-        Coffe app
-      </a>
+      <a href="https://github.com/michelecreanza/michelecaffeshop">Coffe app</a>
+
+      <h3>getaway app</h3>
+      <a href=" http://getaway.surge.sh/">getaway app</a>
 
       <div>
         <h3>Dolce italian caffe</h3>

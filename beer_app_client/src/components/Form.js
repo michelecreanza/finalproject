@@ -28,7 +28,6 @@ class Form extends React.Component {
     event.preventDefault();
     console.log("updating");
     await axios.put(`/beers/${formInputs.id}`, formInputs);
-
     this.getBeers();
   }
   handleChange(event) {
@@ -42,7 +41,13 @@ class Form extends React.Component {
       alcohol: this.state.alcohol
       // id: this.props.beer.id
     });
+    this.setState({
+      name: "",
+      img: "",
+      alcohol: ""
+    });
   }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
