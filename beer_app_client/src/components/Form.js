@@ -8,7 +8,8 @@ class Form extends React.Component {
     this.state = {
       name: "",
       img: "",
-      alcohol: ""
+      alcohol: "",
+      brand: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -23,6 +24,7 @@ class Form extends React.Component {
         name: this.state.name,
         img: this.state.img,
         alcohol: this.state.alcohol,
+        brand: this.state.brand,
         id: this.props.beer.id
       });
       this.props.toggleForm();
@@ -30,13 +32,15 @@ class Form extends React.Component {
       this.props.handleSubmit(event, {
         name: this.state.name,
         img: this.state.img,
-        alcohol: this.state.alcohol
+        alcohol: this.state.alcohol,
+        brand: this.state.brand
       });
     }
     this.setState({
       name: "",
       img: "",
-      alcohol: ""
+      alcohol: "",
+      brand: ""
     });
   }
   componentDidMount() {
@@ -45,6 +49,7 @@ class Form extends React.Component {
         alcohol: this.props.beer.alcohol || "",
         img: this.props.beer.img || "",
         name: this.props.beer.name || "",
+        brand: this.props.beer.brand || "",
         id: this.props.beer.id || ""
       });
     }
@@ -76,6 +81,14 @@ class Form extends React.Component {
           type={"text"}
           value={this.state.alcohol}
           id={"alcohol"}
+        />
+        <Input
+          handleChange={this.handleChange}
+          name={"brand"}
+          placeholder={"brand"}
+          type={"text"}
+          value={this.state.brand}
+          id={"brand"}
         />
         <input
           type="submit"
