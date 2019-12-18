@@ -24,7 +24,7 @@ class App extends React.Component {
     this.getBeers();
   }
   async getBeers() {
-    const response = await axios("/beers");
+    const response = await axios("https://birra-app.herokuapp.com/beers");
     const data = response.data;
     this.setState({
       beers: data
@@ -32,18 +32,23 @@ class App extends React.Component {
   }
   async handleAdd(event, formInputs) {
     event.preventDefault();
-    await axios.post("/beers", formInputs);
+    await axios.post("https://birra-app.herokuapp.com/beers", formInputs);
     this.getBeers();
   }
   async handleDelete(deletedBeer) {
-    await axios.delete(`/beers/${deletedBeer.id}`);
+    await axios.delete(
+      `https://birra-app.herokuapp.com/beers/${deletedBeer.id}`
+    );
     this.getBeers();
   }
 
   async handleUpdate(event, formInputs) {
     event.preventDefault();
     console.log("updating");
-    await axios.put(`/beers/${formInputs.id}`, formInputs);
+    await axios.put(
+      `https://birra-app.herokuapp.com/beers/${formInputs.id}`,
+      formInputs
+    );
     this.getBeers();
   }
 

@@ -13,7 +13,7 @@ class Beers extends Component {
     this.getBeers();
   }
   async getBeers() {
-    const response = await axios("/beers");
+    const response = await axios("https://birra-app.herokuapp.com/beers");
     const data = response.data;
     this.setState({
       beers: data

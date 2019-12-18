@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'localhost:2045'
+    origins 'http://birra-app.surge.sh/'
 
     resource '*',
       headers: :any,
