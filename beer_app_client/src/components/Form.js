@@ -77,7 +77,7 @@ class Form extends React.Component {
         <Input
           handleChange={this.handleChange}
           name={"alcohol"}
-          placeholder={"alcohol"}
+          placeholder={"price"}
           type={"text"}
           value={this.state.alcohol}
           id={"alcohol"}
@@ -85,14 +85,14 @@ class Form extends React.Component {
         <Input
           handleChange={this.handleChange}
           name={"brand"}
-          placeholder={"brand"}
+          placeholder={"details"}
           type={"text"}
           value={this.state.brand}
           id={"brand"}
         />
         <input
           type="submit"
-          value={this.props.beer ? "update this beer" : "add a beer"}
+          value={this.props.beer ? "update this work" : "add a work"}
         />
       </form>
     );
