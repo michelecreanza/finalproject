@@ -24,7 +24,7 @@ class Beers extends Component {
     return (
       <>
         <header>
-          <h1>Hello Beer World</h1>
+          <h1>Hello Artisan World</h1>
         </header>
 
         {this.state.beers.map(beer => {
